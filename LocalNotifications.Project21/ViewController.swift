@@ -27,6 +27,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scheduleLocal(sender: AnyObject) {
+        
+        let notification = UILocalNotification()
+        notification.fireDate = NSDate(timeIntervalSinceNow: 5)
+        notification.alertBody = "Hey you! Yeah you! Swipe to unlock!"
+        notification.alertAction = "be awesome!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["Customfield": "w00t"]
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
 }
